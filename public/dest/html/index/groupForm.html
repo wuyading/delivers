@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+</head>
+<body>
+<div class="main-contain">
+    <header class="aui-bar aui-bar-nav">
+        <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">车险团购</div>
+    </header>
+    <img src="../../images/group-form.jpg" class="group-top-img"/>
+    <div class="group-info">
+        <p>投保人数 <span class="color-f6">1123人</span></p>
+        <p class="font-12 color-99">活动详情：提供便捷、透明和快速的在线投保是安联车险坚持的原则
+            当您网上支付完成后，就可以即刻查看保单信息</p>
+    </div>
+    <form class="groupForm" id="groupForm">
+        <div class="aui-content">
+            <ul class="aui-list aui-list-in">
+                <li class="aui-list-item aui-list-item-arrow">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">投保车型</div>
+                        <div class="aui-list-item-right">请选择车型</div>
+                        <input type="hidden" id="car-type"/>
+                        <select class="car-type">
+                            <option value="">请选择车型</option>
+                            <option value="0">宝马</option>
+                            <option value="1">奔驰</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">行使里程</div>
+                        <div class="aui-list-item-right">
+                            <input type="number" placeholder="请输入万公里" id="gongli"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">过户次数</div>
+                        <div class="aui-list-item-right">
+                            <input type="text" value="" id="change" style="display: none"/>
+                            <ul class="transfer-num">
+                                <li value="0">0</li>
+                                <li value="1">1</li>
+                                <li value="2">2</li>
+                                <li value="3">3</li>
+                                <li value="4">3次以上</li>
+                                <li value="5">不清楚</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">联系人</div>
+                        <div class="aui-list-item-right">
+                            <input type="text" placeholder="请输入联系人" name="name" id="name"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">联系电话</div>
+                        <div class="aui-list-item-right">
+                            <input type="text" placeholder="请输入联系电话" name="mobile" id="mobile"/>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button id="group-btn" type="button">为爱车投保</button>
+    </form>
+</div>
+<script src="../../public/js/plugins/validate.js"></script>
+<script src="../../public/js/lib/aui/js/aui-toast.js"></script>
+<script src="../../js/groupForm.js"></script>
+</body>
+</html>

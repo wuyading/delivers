@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/mall.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">产品列表</div>
+</header>
+<div class="main-contain">
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">综合排序</div>
+        <div class="aui-tab-item"><div></div>销量优先</div>
+        <div class="aui-tab-item">价格排序</div>
+    </div>
+    <div class="product-list">
+        <div class="product-item bg-w">
+            <div class="item-img">
+                <img src="../../images/img-detail.jpg"/>
+            </div>
+            <div class="product-content">
+                <div class="name overflow">使用的润滑油哦</div>
+                <div class="overflow">
+                    <span class="i-bao">包邮</span>
+                    <span class="pull-right color-99 font-12">苏州</span>
+                </div>
+                <div class="overflow">
+                    <span class="color-f6">¥45.98</span>
+                    <span class="pull-right font-12">14人付款</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-item bg-w">
+            <div class="item-img">
+                <img src="../../images/img-detail.jpg"/>
+            </div>
+            <div class="product-content">
+                <div class="name overflow">使用的润滑油哦</div>
+                <div class="overflow">
+                    <span class="i-bao">包邮</span>
+                    <span class="pull-right color-99 font-12">苏州</span>
+                </div>
+                <div class="overflow">
+                    <span class="color-f6">¥45.98</span>
+                    <span class="pull-right font-12">14人付款</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<script type="text/javascript">
+    var tab = new auiTab({
+        element:document.getElementById("tab"),
+        index:1,
+        repeatClick:false
+    },function(ret){
+        //console.log(ret);
+    });
+</script>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">个人中心</div>
+</header>
+<div class="main-contain">
+    <div class="top-info">
+        <img src="../../images/img-detail.jpg" class="icon-head"/>
+        <div class="top-txt">
+            <p>填写昵称</p>
+            <p>17765897451</p>
+        </div>
+        <div class="maintain-order">
+            <img src="../../images/icon-order.png"/>
+            <span>保养记录</span>
+        </div>
+    </div>
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item line-mine">
+                <img src="../../images/icon-mycart.png" class="icon-mycart"/>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    我的车库
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item line-item">
+                <img src="../../images/icon-e.png"/>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    编辑资料
+                </div>
+            </li>
+            <li class="aui-list-item line-item">
+                <img src="../../images/icon-p.png"/>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    密码设置
+                </div>
+            </li>
+            <li class="aui-list-item line-item">
+                <img src="../../images/icon-bind.png"/>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    绑定手机号
+                </div>
+            </li>
+            <li class="aui-list-item line-item">
+                <img src="../../images/icon-msg.png"/>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    意见反馈
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-exit">退出登录</div>
+</div>
+<style>
+    .tab-icon{
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        margin-top: 0.2rem;
+    }
+    .round{
+        position: fixed;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: #fff;
+        bottom: 0.9rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 1px solid #ccc;
+    }
+</style>
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-bar-tab-item aui-active" tapmode="" data-item-order="0">
+        <img src="../../images/index.png" class="tab-icon"/>
+        <div class="aui-bar-tab-label">首页</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode="" data-item-order="1">
+        <img src="../../images/maintain.png" class="tab-icon"/>
+        <div class="aui-bar-tab-label">保养</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode="" data-item-order="2">
+        <img src="../../images/drive.png" class="tab-icon"/>
+        <div class="aui-bar-tab-label">学车</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode="" data-item-order="3">
+        <img src="../../images/usedCar.png" class="tab-icon"/>
+        <div class="aui-bar-tab-label">二手车</div>
+    </div>
+    <div class="aui-bar-tab-item" tapmode="" data-item-order="4">
+        <img src="../../images/person.png" class="tab-icon"/>
+        <div class="aui-bar-tab-label">我的</div>
+    </div>
+</footer>
+<div class="round"></div>
+<script>
+//    var i = $('#index').val();
+//    $('.aui-bar-tab-item').click(function(){
+//        $('.aui-bar-tab-item').each(function(index){
+//            if(i == index+1){
+//                $(this).addClass('aui-active');
+//            }else{
+//                $(this).removeClass('aui-active');
+//            }
+//        });
+//        switch(i){
+//            case '1':
+//                window.location.href = '../index/index.html';
+//                break;
+//            case '5':
+//                window.location.href = '../personal/personal.html';
+//                break;
+//        }
+//    });
+</script>
+</body>
+</html>

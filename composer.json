@@ -1,0 +1,37 @@
+{
+	"name": "zilf/zilf-demo",
+    "description": "Zilf PHP Framework Demo",
+    "keywords": ["framework", "zilf"],
+    "license": "MIT",
+    "type": "project",
+	"authors": [
+		{
+			"name":"lilei",
+			"email":"597196313@qq.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		},
+		"files": [
+			"app/Common/function.php"
+		]
+	},
+    "require": {
+		"php": ">=7.0",
+		"zilf/zilf" : "1.0.*",
+		"zilf/wechat" : "~2.0",
+		"lokielse/omnipay-alipay": "^2.0",
+		"predis/predis": "^1.1",
+		"jasongrimes/paginator": "~1.0",
+		"symfony/var-dumper": "^3.3",
+		"symfony/console": "~3.3",
+		"endroid/qrcode": "^2.3",
+		"nesbot/carbon": "^1.22",
+		"riverslei/payment": "~4.0.0"
+	},
+	"require-dev": {
+        "phpunit/phpunit": "~5.7"
+    }
+}

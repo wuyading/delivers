@@ -1,0 +1,10 @@
+# 此为注释 – 将被 Git 忽略
+# 忽略文件
+
+.idea/*
+.sass-cache/*
+node_modules/*
+public/static/*
+src/*
+temp/*
+public/upload/12/76/cc62e403d709fce65d8166d590232942\.jpeg

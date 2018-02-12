@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body class="bg-w">
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">绑定手机</div>
+</header>
+<div class="main-contain">
+    <form class="bindForm" id="bindForm">
+        <div class="form-line">
+            <input type="text" value="+86 中国" readonly/>
+            <img src="../../images/nav-down.png" class="nav-down"/>
+            <select>
+                <option>+86 中国</option>
+            </select>
+        </div>
+        <div class="form-line">
+            <input type="text" placeholder="请输入手机号" name="mobile" id="mobile" maxlength="11"/>
+        </div>
+        <div class="form-line send-line">
+            <input class="send_code" type="text" placeholder="请输入验证码" name="send_yz" id="send_yz"/>
+            <span class="send">获取验证码</span>
+        </div>
+        <button type="submit">确定</button>
+    </form>
+    <p class="error-message"></p>
+</div>
+<script type="text/javascript" src="../../public/js/plugins/validate.js"></script>
+<script type="text/javascript" src="../../js/binding.js"></script>
+</body>
+</html>

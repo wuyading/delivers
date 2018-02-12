@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/index.css">
+<link rel="stylesheet" type="text/css" href="../../css/webuploader.css">
+</head>
+<body class="bg-w">
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">事故中心</div>
+</header>
+<div class="main-contain">
+    <div class="aui-content">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">事故车辆：奥迪A6L（小轿车）</div>
+                    <div class="aui-list-item-right">修改</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">事故地点：</div>
+                    <div class="aui-list-item-right item-jiu">
+                        <input type="text" placeholder="填写标志性建筑物更快救援"/>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div style="position: relative;">
+        <textarea class="txtArea-center" placeholder="事故概况"></textarea>
+        <span class="txtArea-tips">最少10个字</span>
+    </div>
+
+    <div class="upload-area">
+        <div class="upload-list">
+            <!-- 图片上传区域 -->
+        </div>
+        <div class="img-area">
+            <img src="../../images/icon-service.png" class="img-upload" id="img-upload"/>
+            <img src="../../images/img-tips.png" class="img-tips"/>
+        </div>
+        <div id="filePicker" style="display: none">选择图片</div>
+    </div>
+    <button class="accident-submit">提交</button>
+</div>
+</body>
+<script type="text/javascript" src="../../js/webuploader.js"></script>
+<script type="text/javascript" src="../../js/accident.js"></script>
+</html>

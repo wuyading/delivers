@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/mall.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">结算</div>
+</header>
+<div class="main-contain">
+    <ul class="aui-list aui-media-list">
+        <li class="aui-list-item aui-list-item-middle overflow cart-item">
+            <input type="checkbox" class="aui-radio cart-radio" name="cart" checked>
+            <div class="aui-media-list-item-inner cart-right">
+                <div class="aui-list-item-media">
+                    <img src="../../images/icon-1.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="cart-detail">
+                    <div class="aui-font-size-14 overflow">auis</div>
+                    <div class="aui-list-item-text">
+                        <span class="color-f6">¥158.00</span>
+                        <div class="aui-list-item-right">x1</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item aui-list-item-middle overflow cart-item">
+            <input type="checkbox" class="aui-radio cart-radio" name="cart" checked>
+            <div class="aui-media-list-item-inner cart-right">
+                <div class="aui-list-item-media">
+                    <img src="../../images/icon-1.png" class="aui-img-round aui-list-img-sm">
+                </div>
+                <div class="cart-detail">
+                    <div class="aui-font-size-14 overflow">auis</div>
+                    <div class="aui-list-item-text">
+                        <span class="color-f6">¥158.00</span>
+                        <div class="aui-list-item-right">x1</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="qu-list">
+        <li class="active" data-val="1">
+            到店安装
+            <span class="li-d">我的选择</span>
+        </li>
+        <li data-val="2">
+            邮寄到家
+            <span class="li-d">我的选择</span>
+        </li>
+    </ul>
+    <!-- 到店安装 -->
+    <div class="dao-dian">
+        <div class="aui-content">
+            <ul class="aui-list aui-list-in">
+                <li class="aui-list-item aui-list-item-arrow">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">选择附件门店</div>
+                        <div class="aui-list-item-right">选择</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <img src="../../images/cart-pay.png" class="cart-pay"/>
+        <div class="pay-type">
+            <div class="pull-left">支付方式</div>
+            <div class="pull-left">
+                <input type="radio" class="aui-radio" name="pay">
+                <img src="../../images/pay-zhi.png"/>
+            </div>
+            <div class="pull-left">
+                <input type="radio" class="aui-radio" name="pay">
+                <img src="../../images/pay-wei.png"/>
+            </div>
+        </div>
+    </div>
+    <!-- 邮寄到家 -->
+    <div class="dao-jia disnone">
+        <div class="address-select">
+            <div>收货人：张冉
+                <div class="pull-right font-12 color-99">添加新地址</div>
+            </div>
+            <div class="address-detail">
+                <i class="aui-iconfont aui-icon-location"></i>收货地址：收货地址：江苏省苏州市相城区嘉元路德诚嘉
+                元广场写字楼1903室   13812671267
+            </div>
+        </div>
+        <img src="../../images/address-line.png" class="add-line"/>
+    </div>
+    <button class="btn-pay" type="button">立即支付(¥0元)</button>
+</div>
+</body>
+<script type="text/javascript" src="../../js/toPay.js"></script>
+</html>

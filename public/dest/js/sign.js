@@ -1,0 +1,71 @@
+$().ready(function(){
+    //手机号校验
+    $('#signForm').validate({
+        rules:{
+            mobile:{
+                required:true,
+                mobile:true
+            },
+            name:{
+                required:true
+            },
+            identity:{
+                required:true
+            },
+            time:{
+                required:true
+            },
+            driver_type:{
+                required:true
+            }
+        },
+        messages:{
+            mobile:{
+                required:'手机号不能为空',
+                mobile:'手机号格式有误'
+            },
+            name:{
+                required:'姓名不能为空'
+            },
+            identity:{
+                required:"身份证不能为空"
+            },
+            time:{
+                required:"时间不能为空"
+            },
+            driver_type:{
+                required:"驾照不能为空"
+            }
+        },
+        submitHandler:function(){
+            var formData = $('#signForm').serialize();
+            //提交请求
+            $.ajax({
+                type:'post',
+                url:'/driverSchool/ajaxApplySave',
+                data:formData,
+                success:function(res){
+                    console.log(res);
+                    if(res.code == 1001){
+                        alert(res.msg);
+                        window.location.href = '/';
+                    }
+                }
+            })
+
+        }
+    });
+    //选择预约时间
+    $('.yu-time').bind('change',function(){
+        $('input[name="time"]').val($(this).val()).blur();
+    });
+    //选择驾照
+    $('.jia').change(function(){
+        if($(this).val() != ''){
+            $('input[name="driver_type"]').val($(this).find('option:selected').text()).blur();
+        }else{
+            $('input[name="driver_type"]').val('');
+        }
+
+    });
+});

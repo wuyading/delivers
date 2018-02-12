@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/mall.css">
+</head>
+<body class="bg-w">
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">产品详情</div>
+</header>
+<div class="main-contain">
+    <div class="detail-top">
+       <img src="../../images/img-detail.jpg"/>
+    </div>
+    <div class="d-content">
+        <div class="d-name">嘉实宝车用润滑油嘉实宝车用润滑油嘉实宝车用润滑油嘉实宝车用润滑油</div>
+        <div class="overflow">
+            <span class="color-f6">¥45.90</span>
+            <span class="pull-right">月销395笔</span>
+        </div>
+    </div>
+    <div class="d-title">
+        <span class="txt color-99">产品详情</span>
+    </div>
+    <div class="detail-content bg-w">
+        <img src="../../images/img-detail.jpg"/>
+    </div>
+    <div class="detail-foot">
+        <div class="pull-left"><i class="aui-iconfont aui-icon-cart"></i>购物车:17件</div>
+        <div class="pull-right btn-now">立即购物</div>
+        <div class="pull-right btn-cart">加入购物车</div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-toast.js"></script>
+<script type="text/javascript">
+    var toast = new auiToast({});
+    $('.btn-cart').click(function(){
+        toast.success({
+            title:"加入购物车成功",
+            duration:1000
+        });
+    });
+</script>
+</html>

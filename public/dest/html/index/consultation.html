@@ -1,0 +1,38 @@
+<!--include "../../public/html/meta.html"-->
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/mall.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">立即咨询</div>
+</header>
+<div class="address-list">
+    <!-- 列表 -->
+    <form class="address-form">
+        <div class="form-line">
+            <span class="f-title">姓名</span>
+            <input type="text" placeholder="请输入姓名" name="name" class="name"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">手机号</span>
+            <input type="text" placeholder="请输入联系电话" name="mobile" class="mobile"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">邮箱</span>
+            <input type="text" placeholder="请输入邮箱" name="email" class="email"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">咨询车辆</span>
+            <input type="text" name="address" class="address" />
+        </div>
+    </form>
+    <button class="btn-address" type="button">提交</button>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-toast.js"></script>
+<script type="text/javascript" src="../../js/consultation.js"></script>
+</html>

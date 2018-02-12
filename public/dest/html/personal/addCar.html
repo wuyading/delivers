@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">添加爱车</div>
+</header>
+<div class="main-contain">
+    <form class="carForm">
+        <div class="form-line">
+            <span><span class="color-f6">*</span>车牌号码</span>
+            <div class="input-line">
+                <input type="text" placeholder="请填写车牌号" class="car_no"/>
+            </div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6">*</span>车牌车系</span>
+            <div class="input-line">
+                <input type="text" placeholder="请选择品牌车系" class="car_type" readonly/>
+            </div>
+            <div class="right-arrow"></div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>车型</span>
+            <div class="input-line">
+                <input type="text" placeholder="请选择添加车型" readonly/>
+            </div>
+            <div class="right-arrow"></div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>行使里数</span>
+            <div class="input-line">
+                <input type="text" placeholder="点击输入公里"/>
+            </div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>车架号</span>
+            <div class="input-line">
+                <input type="text" placeholder="点击输入车架号"/>
+            </div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>发动机号</span>
+            <div class="input-line">
+                <input type="text" placeholder="点击输入发动机号"/>
+            </div>
+        </div>
+        <button class="btn-save" type="button">保存车辆信息</button>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-toast.js"></script>
+<script type="text/javascript" src="../../js/addCar.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">我的支付宝</div>
+</header>
+<div class="main-contain">
+    <form class="zhiForm" id="zhiForm">
+        <div class="zhiTitle">实名信息</div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>姓名</span>
+            <div class="input-line">
+                <input type="text" placeholder="请输入姓名" name="name"/>
+            </div>
+        </div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>身份证号</span>
+            <div class="input-line">
+                <input type="text" placeholder="请输入身份证号" name="idNum"/>
+            </div>
+        </div>
+        <div class="zhiTitle">支付宝账号</div>
+        <div class="form-line">
+            <span><span class="color-f6"></span>支付宝账号</span>
+            <div class="input-line">
+                <input type="text" placeholder="请输入支付宝账号" name="zhi"/>
+            </div>
+        </div>
+        <button class="btn-save">绑定账号</button>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/plugins/validate.js"></script>
+<script>
+    $('#zhiForm').validate({
+        rules:{
+            name:{
+                required:true
+            },
+            idNum:{
+                required:true
+            },
+            zhi:{
+                required:true
+            }
+        },
+        messages:{
+            name:{
+                required:'不能为空'
+            },
+            idNum:{
+                required:'不能为空'
+            },
+            zhi:{
+                required:'不能为空'
+            }
+        },
+        submitHandler:function(){
+            var formData = $('#bindForm').serialize();
+            formData= decodeURIComponent(formData,true);//防止中文乱码
+            var json= JSON.parse(DataDeal.formToJson(formData));//转化为json
+            //提交请求
+
+        }
+    });
+</script>
+</html>

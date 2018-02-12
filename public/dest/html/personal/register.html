@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body class="login-bg">
+<div class="main-contain">
+    <img src="../../images/icon-close.png" class="login-close"/>
+    <form id="registerForm" class="login-form">
+        <div class="form-line">
+            <input type="text" placeholder="请输入手机号" name="mobile" id="mobile" maxlength="11"/>
+        </div>
+        <div class="form-line send-line">
+            <input type="text" placeholder="请输入验证码" name="send_yz" id="send_yz"/>
+            <span class="send">获取验证码</span>
+        </div>
+        <button type="submit">登录</button>
+        <div class="forget"><span>无需注册，手机验证码直接登录</span><a href="login.html" class="login-in">密码登录</a></div>
+    </form>
+    <p class="error-message"></p>
+    <div class="agree">
+        <input type="checkbox" checked/>
+        登录车途仕，表示您同意平台《用户协议》
+    </div>
+</div>
+<script type="text/javascript" src="../../public/js/plugins/validate.js"></script>
+<script type="text/javascript" src="../../js/register.js"></script>
+</body>
+</html>

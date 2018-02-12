@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" type="text/css" href="../../public/js/lib/aui/css/aui.css">
+    <script type="text/javascript" src="../../public/js/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/plugins/public.js"></script>
+    <script type="text/javascript" src="../../public/js/lib/aui/js/aui-tab.js"></script>
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/mall.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">添加地址</div>
+</header>
+<div class="address-list">
+    <!-- 列表 -->
+    <form class="address-form">
+        <div class="form-line">
+            <span class="f-title">收货人</span>
+            <input type="text" placeholder="请输入收货地址" name="name" class="name"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">联系电话</span>
+            <input type="text" placeholder="请输入联系电话" name="mobile" class="mobile"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">详细地址</span>
+            <input type="text" placeholder="请输入详细地址" name="address" class="address"/>
+        </div>
+        <div class="form-line">
+            <span class="f-title">设为默认</span>
+            <div class="item-input">
+                <input type="checkbox" class="aui-switch">
+            </div>
+        </div>
+    </form>
+    <button class="btn-address" type="button">保存新地址</button>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-toast.js"></script>
+<script type="text/javascript" src="../../js/addressAdd.js"></script>
+</html>

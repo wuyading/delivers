@@ -1,0 +1,68 @@
+<!--include "../../public/html/meta.html"-->
+<title>车途仕</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/personal.css">
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn" onclick="history.go(-1);">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">编辑资料</div>
+</header>
+<div class="main-contain">
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">头像</div>
+                    <img src="../../images/img-detail.jpg" class="edit-head"/>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner edit-txt">
+                    <div class="aui-list-item-title">昵称</div>
+                    <div class="aui-list-item-right edit-name">嘿傻逼</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">性别</div>
+                    <div class="aui-list-item-right">不男不女</div>
+                    <select class="edit-select edit-sex">
+                        <option value="">保密</option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">生日</div>
+                    <div class="aui-list-item-right">2222-22-22</div>
+                    <input type="date" class="edit-select edit-birth"/>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-arrow">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">星座</div>
+                    <div class="aui-list-item-right">傻逼座</div>
+                    <select class="edit-select edit-xing">
+                        <option value="">保密</option>
+                        <option value="0">天秤座</option>
+                        <option value="1">狮子座</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../public/js/lib/aui/js/aui-dialog.js"></script>
+<script type="text/javascript" src="../../js/edit.js"></script>
+</html>
+
