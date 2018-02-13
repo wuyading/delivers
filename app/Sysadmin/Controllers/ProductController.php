@@ -28,10 +28,10 @@ class ProductController extends SysadminBaseController
         $vars = Request::query()->all();
         $porduct = Product::find()->joinWith('categorys',false);
         if (!empty($vars['title'])) {
-            $porduct-> andWhere(['like','products.product_name',trim($vars['title'])]);
+            $porduct-> andWhere(['like','product.name',trim($vars['title'])]);
         }
         $urlPattern = toRoute('product/index/(:num)?'.$_SERVER['QUERY_STRING']);
-        $data = CartService::getListData($porduct,'products.*,category.name',null,null,null , $urlPattern, $currentPage);
+        $data = CartService::getListData($porduct,'product.*,category.name as brand_name',null,null,null , $urlPattern, $currentPage);
         return $this->render('product/index', [
             'vars' => $vars,
             'list' => $data['list'],
@@ -48,14 +48,12 @@ class ProductController extends SysadminBaseController
     {
         $data = [];
         $id = Request::query()->get('id');
-        $bands = Category::find()->where(['parent_id'=>0,'type_id'=>9])->asArray()->all();
+        $bands = Category::find()->where(['parent_id'=>0])->asArray()->all();
         $result = ['bands'];
         if($id){
             $data = Product::findOne($id)->toArray();
             if($data['category_id']){
                 $brand = Category::find()->where(['id'=>$data['category_id']])->asArray()->one();
-                $type = Category::find()->where(['parent_id'=>$brand['parent_id'],'type_id'=>9])->asArray()->all();
-                array_push($result,'type');
                 array_push($result,'brand');
             }
         }
@@ -64,7 +62,7 @@ class ProductController extends SysadminBaseController
     }
 
     /**
-     * 保存车
+     * 保存
      */
     public function ajax_save()
     {
@@ -73,15 +71,14 @@ class ProductController extends SysadminBaseController
             $data = Request::request()->get('info');
             $data['updated_at'] = time();
             if(isset($data['logo'])){
-                $data['buy_time'] = strtotime($data['buy_time']);
                 $data['image'] = $data['logo'];
             }
             $is_success = false;
             if (!empty($id)) { //修改内容
-                $activity = Product::findOne($id);
-                if ($activity) {
-                    $activity->setAttributes($data);
-                    $is_success = $activity->update();
+                $product = Product::findOne($id);
+                if ($product) {
+                    $product->setAttributes($data);
+                    $is_success = $product->update();
                 }
             } else { //添加内容
                 $data['created_at'] = time();

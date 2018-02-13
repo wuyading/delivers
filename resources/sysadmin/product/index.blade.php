@@ -28,11 +28,13 @@
             <div class="col-md-12 col-sm-12">
                 <table class="table table-hover">
                     <tr>
-                        <th>编号</th>
+                        <th>序号</th>
+                        <th>商品编号</th>
+                        <th>商品名称</th>
                         <th>品牌</th>
-                        <th>商品主图</th>
-                        <th>名称</th>
-                        <th>进货价格</th>
+                        <th>商品图片</th>
+                        <th>销售价格</th>
+                        <th>库存</th>
                         <th>添加时间</th>
                         <th>操作</th>
                     </tr>
@@ -41,10 +43,12 @@
                         @foreach( $list as $item )
                         <tr>
                             <td><?=$item['id'] ?></td>
+                            <td><?=$item['sku'] ?></td>
                             <td><?=$item['name'] ?></td>
+                            <td><?=$item['brand_name'] ?></td>
                             <td><?=asset_img($item['image']) ?></td>
-                            <td><?=$item['product_name'] ?></td>
-                            <td><?=$item['price'] ?></td>
+                            <td><?=$item['sell_price'] ?></td>
+                            <td><?=$item['stock'] ?></td>
                             <td><?=toDate($item['created_at'])?></td>
                             <td>
                                 <a href="<?=toRoute('product/add?id='.$item['id'])?>" class="btn btn-primary">修改</a>

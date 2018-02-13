@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-02-12 17:22:41
+Date: 2018-02-13 17:00:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -95,7 +95,7 @@ CREATE TABLE `menu_category` (
   `link` varchar(325) DEFAULT NULL COMMENT '功能链接',
   `role_id` int(11) DEFAULT '0' COMMENT '角色id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu_category
@@ -103,16 +103,61 @@ CREATE TABLE `menu_category` (
 INSERT INTO `menu_category` VALUES ('1', '首页', 'home', '0', '1', '1506136018', '1', '/sysadmin', '1');
 INSERT INTO `menu_category` VALUES ('2', '个人信息', 'myself_info', '1', '1', '1505886348', '0', 'adminmanage/edit_info', '1');
 INSERT INTO `menu_category` VALUES ('3', '修改密码', 'update_my_password', '13', '1', '1505886372', '0', 'adminmanage/edit_pwd', '1');
-INSERT INTO `menu_category` VALUES ('4', '系统设置', 'settinga', '0', '1', '1497322115', '12', '#', '1');
+INSERT INTO `menu_category` VALUES ('4', '系统设置', 'settinga', '0', '1', '1497322115', '999', '#', '1');
 INSERT INTO `menu_category` VALUES ('6', '后台菜单管理', 'menu_manager', '4', '1', '1497258119', '0', 'menu', '1');
 INSERT INTO `menu_category` VALUES ('7', '分类管理', 'category', '8', '1', '1497259544', '0', 'category', '1');
-INSERT INTO `menu_category` VALUES ('8', '分类设置', 'category_setting', '0', '1', '1497259527', '11', '#', '1');
+INSERT INTO `menu_category` VALUES ('8', '分类设置', 'category_setting', '0', '1', '1497259527', '4', '#', '1');
 INSERT INTO `menu_category` VALUES ('9', '分类类别', 'category_type', '8', '1', '1497315618', '0', 'category/type', '1');
 INSERT INTO `menu_category` VALUES ('13', '账号管理', 'manager', '0', '1', '1497338808', '2', '#', '1');
 INSERT INTO `menu_category` VALUES ('14', '账号列表', 'manager', '13', '1', '1497338886', '0', 'adminmanage/user_list', '1');
 INSERT INTO `menu_category` VALUES ('15', '角色管理', 'role', '13', '1', '1497338908', '0', 'adminmanage/user_role', '1');
 INSERT INTO `menu_category` VALUES ('24', '商品列表', 'list', '48', '1', '1505898702', '0', 'product', '1');
-INSERT INTO `menu_category` VALUES ('48', '商品管理', 'product', '0', '1', '1505886680', '4', '#', '1');
+INSERT INTO `menu_category` VALUES ('48', '商品管理', 'product', '0', '1', '1505886680', '3', '#', '1');
+INSERT INTO `menu_category` VALUES ('78', '发货单管理', '#', '0', '1', '1518490267', '5', '#', '0');
+INSERT INTO `menu_category` VALUES ('79', '发货单列表', '#', '78', '1', '1518490292', '0', 'deliver/index', '0');
+
+-- ----------------------------
+-- Table structure for order
+-- ----------------------------
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `order_no` int(11) NOT NULL COMMENT '订单号',
+  `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1 待发货 2 已发货',
+  `money` decimal(10,2) NOT NULL COMMENT '订单金额',
+  `created_at` int(11) NOT NULL COMMENT '创建时间',
+  `updated_at` int(11) NOT NULL COMMENT '更新时间',
+  `deleted_at` int(11) DEFAULT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of order
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for order_info
+-- ----------------------------
+DROP TABLE IF EXISTS `order_info`;
+CREATE TABLE `order_info` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL COMMENT '订单id',
+  `order_no` int(11) NOT NULL COMMENT '订单号',
+  `product_id` int(11) NOT NULL COMMENT '商品id',
+  `product_name` varchar(255) NOT NULL COMMENT '商品名称',
+  `product_price` decimal(10,2) NOT NULL COMMENT '商品单价',
+  `product_img` varchar(255) NOT NULL COMMENT '商品图片',
+  `num` int(11) NOT NULL COMMENT '数量',
+  `product_money` decimal(10,2) NOT NULL COMMENT '商品总金额',
+  `created_at` int(11) NOT NULL COMMENT '创建时间',
+  `updated_at` int(11) NOT NULL COMMENT '更新时间',
+  `deleted_at` int(11) DEFAULT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of order_info
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for product
@@ -130,16 +175,18 @@ CREATE TABLE `product` (
   `brand_id` int(11) NOT NULL COMMENT '品牌id',
   `unit` varchar(255) NOT NULL COMMENT '单位',
   `stock` int(11) NOT NULL DEFAULT '0' COMMENT '库存',
-  `created_at` int(11) NOT NULL COMMENT '创建时间',
   `format` varchar(255) NOT NULL COMMENT '规格型号',
+  `created_at` int(11) NOT NULL COMMENT '创建时间',
   `updated_at` int(11) NOT NULL COMMENT '最后编辑时间',
   `deleted_at` int(11) NOT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of product
 -- ----------------------------
+INSERT INTO `product` VALUES ('1', '红柚', '/upload/77/12/1c819f3e26a3a30c033c677e6a914550.jpeg', '0.00', '75.00', 'ML001', '', '0', '1', '瓶', '100', '700ml/瓶*6瓶/箱', '1518488982', '1518488982', '0');
+INSERT INTO `product` VALUES ('2', '青柠', '/upload/50/8/c23e1c0a72fdf5ab1d603d940b81b0be.jpeg', '0.00', '75.00', 'ML002', '', '0', '1', '瓶', '100', '700ml/瓶*6瓶/箱', '1518489131', '1518489131', '0');
 
 -- ----------------------------
 -- Table structure for products
@@ -158,7 +205,7 @@ CREATE TABLE `products` (
   `updated_at` int(11) NOT NULL COMMENT '更新时间',
   `deleted_at` int(11) DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of products
@@ -185,6 +232,7 @@ INSERT INTO `products` VALUES ('19', '宝马车', '/upload/category/d08f48b04ef3
 INSERT INTO `products` VALUES ('20', '奔驰', '/upload/category/d08f48b04ef37db1b000166fec0f686a.png', '30.00', '1514338250', '2.8', '5', '73', '1514338250', '1514338250', null);
 INSERT INTO `products` VALUES ('21', '宝马车', '/upload/category/d08f48b04ef37db1b000166fec0f686a.png', '20.00', '1514338250', '2.5', '5', '71', '1514338250', '1514338250', null);
 INSERT INTO `products` VALUES ('22', '奔驰', '/upload/category/d08f48b04ef37db1b000166fec0f686a.png', '30.00', '1514338250', '2.8', '5', '73', '1514338250', '1514338250', null);
+INSERT INTO `products` VALUES ('23', '红柚', '/upload/89/76/2d6b5dfccf6952fdb658929243b6e10f.jpeg', '0.00', '0', '', '0', '0', '1518488888', '1518488888', null);
 
 -- ----------------------------
 -- Table structure for region

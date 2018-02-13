@@ -12,11 +12,11 @@ class Product extends BaseModel
 
     public static function tableName()
     {
-        return 'products';
+        return 'product';
     }
 
     public function getCategorys()
     {
-        return $this->hasMany(Category::className(),['id'=>'category_id']);
+        return $this->hasMany(Category::className(),['id'=>'brand_id']);
     }
 }

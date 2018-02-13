@@ -31,33 +31,54 @@
                             <tr>
                                 <th><span style="color: red">*</span>商品名称：</th>
                                 <td>
-                                    <input type="text" id="" name="info[product_name]" value="{{ $data['product_name'] or ''}}" class="form-control" required>
+                                    <input type="text" id="" name="info[name]" value="{{ $data['name'] or ''}}" class="form-control" required>
                                 </td>
                             </tr>
+
                             <tr>
-                                <th><span style="color: red">*</span>车牌车型车系选择：</th>
+                                <th><span style="color: red">*</span>商品编号：</th>
+                                <td>
+                                    <input type="text" id="" name="info[sku]" value="{{ $data['sku'] or ''}}" class="form-control" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th><span style="color: red">*</span>单位：</th>
+                                <td>
+                                    <input type="text" id="" name="info[unit]" value="{{ $data['unit'] or ''}}" class="form-control" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th><span style="color: red">*</span>选择品牌：</th>
                                 <td class="form-inline">
-                                    <select name="info[province]" onchange="selectRegion('#city',this.value)" class="form-control" required>
-                                        <option value="">请选择车牌车型</option>
+                                    <select name="info[brand_id]" class="form-control" required>
+                                        <option value="">请选择品牌</option>
                                         @foreach($bands as $band)
-                                            <option value="{{ $band['id'] }}" @if(isset($brand['parent_id']) && $brand['parent_id']==$band['id']) selected @endif>{{ $band['name'] }}</option>
+                                            <option value="{{ $band['id'] }}" @if( isset($data['brand_id']) && $data['brand_id'] == $band['id']) selected @endif> {{ $band['name'] }}</option>
                                         @endforeach
                                     </select>
-                                    &nbsp;&nbsp;
-                                    <select name="info[category_id]" id="city" onchange="selectRegion('#district',this.value)" class="form-control" required>
-                                        <option value="">请选择车系</option>
-                                        @if(isset($type))
-                                            @foreach($type as $t)
-                                                <option value="{{ $t['id'] }}" @if($data['category_id']==$t['id']) selected @endif>{{ $t['name'] }}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
                                 </td>
                             </tr>
+
                             <tr>
-                                <th><span style="color: red">*</span>价格：</th>
+                                <th><span style="color: red">*</span>销售价：</th>
                                 <td>
-                                    <input type="text" id="" name="info[price]" placeholder="单位：万元" value="{{ $data['price'] or ''}}" class="form-control" required>
+                                    <input type="text" id="" name="info[sell_price]" value="{{ $data['sell_price'] or ''}}" class="form-control" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th><span style="color: red">*</span>规格型号：</th>
+                                <td>
+                                    <input type="text" id="" name="info[format]"  value="{{ $data['format'] or ''}}" class="form-control" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th><span style="color: red">*</span>库存：</th>
+                                <td>
+                                    <input type="text" id="" name="info[stock]" value="{{ $data['stock'] or ''}}" class="form-control" required>
                                 </td>
                             </tr>
 
@@ -77,27 +98,6 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            <tr>
-                                <th><span style="color: red">*</span>时间：</th>
-                                <td>
-                                    <input type="text" id="" name="info[buy_time]" placeholder="格式：-年-月-日" value="@if(isset($data['buy_time'])){{ date('Y-m-d',($data['buy_time']))}}@endif" class="form-control" required>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th><span style="color: red">*</span>行驶里程：</th>
-                                <td>
-                                    <input type="text" id="" name="info[journey]" placeholder="格式：X万里" value="{{ $data['journey'] or ''}}" class="form-control" required>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th>简介：</th>
-                                <td>
-                                    <textarea id="editor" style="width: 800px;height: 300px;" name="info[description]">{{ $data['description'] or '' }}</textarea>
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                         <div style="margin-top: 20px;text-align: center;">
@@ -114,9 +114,6 @@
 @endsection
 
 @section('plugins_js')
-    <?=asset_js('/assets/global/plugins/ueditor/ueditor.config.js')?>
-    <?=asset_js('/assets/global/plugins/ueditor/ueditor.all.min.js')?>
-    <?=asset_js('/assets/global/plugins/ueditor/lang/zh-cn/zh-cn.js')?>
     <?=asset_js('/assets/global/plugins/webuploader/webuploader.js')?>
 @endsection
 
@@ -125,9 +122,6 @@
     <script type="text/javascript">
         var BASE_URL = '{{ asset_link('/assets/global/plugins/webuploader') }}';
         var UPLOAD_URL = '{{ toRoute('imgup/index') }}';
-
-        //实例化编辑器
-        UE.getEditor('editor');
 
         $('form').submit(function(){
             if($("input[name='info[gys_price]']").val()>0&&$("input[name='info[supplier_id]']").val()==0){
@@ -149,26 +143,6 @@
                 }
             })
         })
-
-        function selectRegion(setid,val){
-            $.ajax({
-                url:'/sysadmin/secondHands/getCarType?parent='+val,
-                type:'GET',
-                dataType:'json',
-                success:function(result){
-                    if(result.code ==1001){
-                        $(setid + " option:not(:first)").remove();
-                        $("#district option:not(:first)").remove();
-                        $.each(result.data,function(index,item){
-                            $(setid).append(new Option(item.name, item.id));
-                        });
-                    }
-                },
-                error:function(){
-                    alert('error');
-                }
-            });
-        }
 
     </script>
 
